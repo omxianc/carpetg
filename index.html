@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	<title>Carpet generator 0.5.6.6</title> 
+	
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="fnex.css" />
+	<script src="jquery-1.11.0.min.js"></script>
+
+	
+	
+	
+</head>
+<body> 
+<div id="dinamicblok" >
+
+					<div id="workpanel">
+						<div id="prop_panel">
+			  				<p class="prop">Width(pixels):</p> <input class="frm" type="number" id="le" size="7" value="720" step="2"><!--ширина массива(длинна начального массива)-->
+			  				<p class="prop">Height(pixels):</p> <input class="frm" type="number" id="it" size="7" value="720" step="2"><!--высота, кол-во итераций-->
+			  			</div>
+
+			  			<div id="prop_panel">
+				  			<p class="prop">Mirroring:</p>
+				  			<!-- ========================================================modal info -->
+				  			
+				  			<a href="#openModal_info_mirroring" id="openmod"><i class="tips">i</i></a><!--info-->
+							<div id="openModal_info_mirroring" class="modalDialog">
+								
+								<iframe src="modal_info_mirroring.html" seamless></iframe>
+								<p id="forcloser"><a href="#close" title="Закрыть" id="closer">| close |</a></p>
+							</div>
+				  			<!-- ======================================================== -->
+				  			<select id = "structure">
+					  			<option value="mr">Mirrors</option>
+					  			<option value="origin">Original</option>
+								<option value="mr2">Mirrors2</option>
+								<option value="mr45">Mirror45</option>
+								<option value="mstar2">Star</option>
+								<option value="mstar3">Flower</option>
+								<option value="carpetx">CarpetX-p</option>
+								<option value="cx_star">CX Star</option>
+								<option value="cx_flower">CX Flower</option>
+								<option value="cx_rose">CX Rose</option>
+							</select>
+
+						
+							<p class="prop">Angle:</p>
+							<!-- ========================================================modal info -->
+				  			
+				  			<a href="#openModal_info_angle" id="openmod"><i class="tips">i</i></a><!--info-->
+							<div id="openModal_info_angle" class="modalDialog">
+								
+								<iframe src="modal_info_angle.html" seamless></iframe>
+
+								<p id="forcloser"><a href="#close" title="Закрыть" id="closer">| close |</a></p>
+							</div>
+				  			<!-- ======================================================== --> 
+							<input class="frm" type="number" id="angle" size="3" value="0" min="0" max="1" step="0.1">
+						</div>
+
+						<!-- <div id="prop_panel"> -->
+
+							<p class="prop">Formula:</p>
+							<!-- ========================================================modal info -->
+				  			
+				  			<a href="#openModal_info_formula" id="openmod"><i class="tips">i</i></a><!--info-->
+							<div id="openModal_info_formula" class="modalDialog">
+								
+								<iframe src="modal_info_formula.html" seamless></iframe>
+
+								<p id="forcloser"><a href="#close" title="Закрыть" id="closer">| close |</a></p>
+							</div>
+				  			<!-- ======================================================== --> 
+					  			<select id = "calc_fun">
+					  			<option value="clf1">Classic</option>
+					  			<option value="clf1.1">Classic ExT n</option>
+					  			<option value="clf2">Reverse</option>
+					  			<option value="clf3">Dual</option>
+					  			<option value="clf4">Dynamic</option>
+					  			<option value="clf5">Dual+</option>
+					  			<option value="clf6">Right D-Complex</option>
+					  			<option value="clf7">Left D-Complex</option>
+					  			<option value="clf8">RLDC j</option>
+					  			<option value="clf9">xRLDC</option>
+					  			<option value="clf10">oRLDC</option>
+					  			<option value="clf11">xoRLDC j</option>
+					  			<option value="clf12">Dynamic xoRLDC(x1o0)</option>
+					  			<option value="clf13">Dynamic xoRLDC(x0o1)</option>
+					  			<!-- <option value="clf14">Dynamic xoRLDC(x1o0) N</option> -->
+					  			<option value="clf15">3C</option>
+					  			<option value="clf16">DxoRLDC j</option>
+					  			<option value="clf17">Fnex mask*</option>
+					  			<option value="clf18">Random Massive</option>
+				  			</select>
+			  			<!-- </div> -->
+
+			  		</div> <!-- end of workpanel -->
+
+			  		<div id="workpanel" class="checkboxes-and-radios">
+			  			<!-- ================================================================================modal info -->
+				  			
+						  			<a href="#openModal_info_source_arrays" id="openmod"><i class="tips">i</i></a><!--info-->
+						  			<p class="prop">Source arrays:</p>
+									<div id="openModal_info_source_arrays" class="modalDialog">
+										
+										<iframe src="modal_info_source_arrays.html" seamless></iframe>
+
+										<p id="forcloser"><a href="#close" title="Закрыть" id="closer">| close |</a></p>
+									</div>
+						 <!-- ===================================================================================== --> 
+
+			  			
+
+			  			<div id="prop_panel">
+							
+							<!-- <input id="funradio_random" type="radio" name="mainfunc" checked=""  > -->
+
+
+							
+  							
+							<input type="radio" name="mainfunc" id="funradio_random" value="1" checked>
+
+							<label for="funradio_random"><p class="func_logo">|random|</p></label>
+
+							<div class="view-source">
+								
+							<a href="#">
+								<!-- <p class="func_logo">expand</p>  -->
+							<svg class="svg-icon" viewBox="0 0 20 20">
+							<path d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"></path>
+							</svg>
+							</a> 
+							
+
+
+
+
+								<div id="advanced_gen_function" class="hide">
+
+								
+								<p class="prop">
+
+									min: <input class="frm" type="number" id="min" size="4" value="0" step="1"><br>
+									<br>
+						  			max: <input class="frm" type="number" id="max" size="6" value="10000" step="1"><br>
+						  			<br>
+						  			st index: <input class="frm" type="number" id="stg" size="4" value="10" step="1"><br>
+						  			<br>
+						  		</p>
+						  			<!-- <input id = "btn" type = "button" onclick="return myFnexfunction(101)" value="random"> --> <!-- рандомные числа -->
+						  			<!-- <div id = "btn" onclick="return myFnexfunction(101)" value="random">random</div> -->
+						  			
+						  			<!-- <input id = "btn" type = "button" onclick="return myFnexfunction(210)" value="next mask*"> --><!-- маска fnex массива -->
+						  			<!-- <input id="funradio_mask" type="radio" name="mainfunc" > mask* -->
+
+						  			<input type="radio" name="mainfunc" id="funradio_mask" value="2" >
+									<label for="funradio_mask"><p class="func_logo">mask*</p></label>
+									
+									<p class="prop" title="For now, this option is used for all Source arrays, not just for the mask*. But keep in mind that the greater the number of iterations, the longer the carpet is formed and the consumption of CPU resources increases. ! If you are not using a mask*, I recommend to set the number of iterations to 1">Iterations (for mask*):</p>
+									
+									<input class="frm" type="number" id="itcicle" size="7" value="1" min="1" step="1"><br>
+						  			<!-- <div id = "btn" onclick="return myFnexfunction(210)" >next mask*</div>
+									 -->
+					  			<!-- </p> -->
+
+
+
+								</div>
+							</div>
+						</div>
+						
+						<div id="prop_panel">
+							<!-- <input id="funradio_digofPi" type="radio" name="mainfunc" > -->
+							
+
+							<input type="radio" name="mainfunc" id="funradio_digofPi" value="3">
+							<label for="funradio_digofPi"><p class="func_logo">| digits of Pi |</p></label>
+
+							<div class="view-source">
+								
+							<a href="#">
+							<svg class="svg-icon" viewBox="0 0 20 20">
+							<path d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"></path>
+							</svg>
+							</a>
+
+								
+								<div id="advanced_gen_function" class="hide">
+								
+								<p class="prop" title="this thing multiplies the value of each element of the array by the number specified here">
+								multiplier: <input class="frm" type="number" id="amp" size="10" value="1" step="1"><br>
+								<br>
+								<!-- <input id = "btn" type = "button" onclick="return myFnexfunction(110)" value="digits of Pi"> --><!-- числа пи -->
+								<!-- <div id = "btn" onclick="return myFnexfunction(110)" >digits of Pi</div> -->
+					  			</p>
+
+								</div>
+							</div>
+						</div>
+
+						<div id="prop_panel">
+							<!-- <input id="funradio_custom" type="radio" name="mainfunc" > -->
+							<input type="radio" name="mainfunc" id="funradio_custom" value="4">
+							<label for="funradio_custom"><p class="func_logo">| custom massive |</p></label>
+
+							<div class="view-source">
+							<a href="#">
+							<svg class="svg-icon" viewBox="0 0 20 20">
+							<path d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"></path>
+							</svg>
+							</a>
+								
+								<div id="advanced_gen_function" class="hide">
+									<!-- Last element #: <p id="max_element"></p><br> -->
+									<p id="max_element"></p>
+									<p class="prop">
+										Element #: <input class="frm" type="number" id="element" size="3" value="0" min="0" step="1"> <br>
+										<br>
+										Value: <input class="frm" type="number" id="vl" size="7" value="0" step="1"><br>
+										<br>
+										<input id = "btn" type = "button" onclick="return manfill()" value="set"><br> 
+										<!-- <div id = "btn" onclick="return manfill()" >set</div> -->
+										<br>
+										<!-- <input id = "btn" type = "button" onclick="return myFnexfunction(012)" value="generate"> -->
+										<!-- <div id = "btn" onclick="return myFnexfunction(012)" >generate</div> -->
+									</p>
+
+					  			
+								</div>
+							</div>
+						</div>
+
+						<!-- <div id="prop_panel"> -->
+							<!-- <input id="funradio_secondms" type="radio" name="mainfunc" > -->
+							<input type="radio" name="mainfunc" id="funradio_secondms" value="5">
+							<label for="funradio_secondms"><p class="func_logo">| second massive |</p></label>
+
+							<div class="view-source">
+								<a href="#">
+								<svg class="svg-icon" viewBox="0 0 20 20">
+								<path d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"></path>
+								</svg>
+								</a>
+								
+								<div id="advanced_gen_function" class="hide">
+									<!-- Last element #: <p id="max_element"></p><br> -->
+									
+									<p class="prop">
+										
+										Step: <input class="frm" type="number" id="njj" size="7" value="15" min="0" step="1"><br>
+										<br>
+										
+										<!-- <input id = "btn" type = "button" onclick="return myFnexfunction(011)" value="generate"> -->
+										<!-- <div id = "btn" onclick="return myFnexfunction(011)" >generate</div> -->
+									</p>
+
+					  			
+								</div>
+							</div>
+						<!-- </div> -->
+
+
+						<!-- <p class="prop" title="for mask">Iterations:</p>
+						<br> 
+						<input class="frm" type="number" id="itcicle" size="7" value="1" min="1" step="1"><br> -->
+					</div> <!-- end of workpanel -->
+						
+					<div id="workpanel">
+							<p class="prop">Levels:</p>
+
+								L0: <input class="frmcolor" type="color" id="bgcolor" size="8" value="#282828"><br>
+								L1: <input class="frmcolor" type="color" id="1color" size="8" value="#008000"><br>
+
+								<input class="frm" type="number" id="2c" size="7" value="2" step="1">
+								: <input class="frmcolor" type="color" id="2color" size="8" value="#009500"><br>
+
+								<input class="frm" type="number" id="3c" size="7" value="4" step="1">
+								: <input class="frmcolor" type="color" id="3color" size="8" value="#00b000"><br>
+
+								<input class="frm" type="number" id="4c" size="7" value="8" step="1">
+								: <input class="frmcolor" type="color" id="4color" size="8" value="#00d200"><br>
+
+								<input class="frm" type="number" id="5c" size="7" value="16" step="1">
+								: <input class="frmcolor" type="color" id="5color" size="8" value="#24ff24"><br>
+
+								<input class="frm" type="number" id="6c" size="7" value="32" step="1">
+								: <input class="frmcolor" type="color" id="6color" size="8" value="#ffff15"><br>
+
+								<input class="frm" type="number" id="7c" size="7" value="64" step="1">
+								: <input class="frmcolor" type="color" id="7color" size="8" value="#d2d200"><br>
+
+								<input class="frm" type="number" id="8c" size="7" value="128" step="1">
+								: <input class="frmcolor" type="color" id="8color" size="8" value="#d2d200"><br>
+
+								<input class="frm" type="number" id="9c" size="7" value="256" step="1">
+								: <input class="frmcolor" type="color" id="9color" size="8" value="#d2d200"><br>
+
+								<input class="frm" type="number" id="10c" size="7" value="512" step="1">
+								: <input class="frmcolor" type="color" id="10color" size="8" value="#d2d200"><br>
+
+								<input class="frm" type="number" id="11c" size="7" value="1024" step="1">
+								: <input class="frmcolor" type="color" id="11color" size="8" value="#d2d200"><br>
+					</div>
+						<!-- <p id = "site_information"><b>information:</b></p> -->
+						<!-- <div class="view-source"><a href="#"><p class = "inf_lang">kukuzo</p></a>
+							<div id="advanced_info" class="hide">
+								
+							</div>
+
+						</div> -->
+					<div id="proppanel">
+						<!--=====================================================================modal dialog info -->
+							<br>
+							<a href="#openModal" id="openmod"><div class="info">i</div></a><!--info-->
+							<div id="openModal" class="modalDialog">
+								<div>
+									<a href="#close" title="Закрыть" class="close">X</a>
+									<!-- <input id = "btn" type = "button" onclick="return ilang(1)" value="RU"> -->
+									<!-- <input id = "btn" type = "button" onclick="return ilang(2)" value="EN"> -->
+
+									<!-- <h3>Width,Height</h3>
+									<p id="iwh"></p>
+
+									<h3>Angle</h3>
+									<p id="i_angle"></p>
+
+									<h3>random</h3>
+									<p id="i_rand"></p>
+
+
+									<h3>digits of Pi</h3>
+									<p id="i_pi"></p>
+
+									<h3>custom massive</h3>
+									<p id="i_custom"></p> -->
+
+									<h4>contacts:</h4>
+									<br>
+									<a href="https://www.instagram.com/omxian/"><p>instagram: omxian</p></a>
+									<br>
+									<p>omx408@gmail.com</p>
+
+
+									<br>
+									<p id="forcloser"><a href="#close" title="Закрыть" id="closer">| close |</a></p>
+									
+
+									
+									
+								</div>
+							</div>
+					</div>
+
+
+
+							<!-- скачать изображение -->
+				  			<!-- <a class="prop" id="download" download="image.png"><input class="infodl" type = "button" title="download image" onClick="download()" value="dwnld"></a> -->
+							<!--===================================================================== --> 
+
+
+						
+						
+
+
+							<script>
+							$(function(){
+							    $('.view-source .hide').hide();
+							    $a = $('.view-source a');
+							    $a.on('click', function(event) {
+							      event.preventDefault();
+							      $a.not(this).next().slideUp(500);
+							      $(this).next().slideToggle(500);
+							    });
+							});
+							</script>
+
+
+					
+</div> <!-- end of dinamicblok -->
+
+<div id="canv" class="sidepanel">
+		<canvas id="canvas" ></canvas>
+		<script src="fnex_massive_v04.js"></script>
+</div>
+<div id="top_panel">
+
+				<!-- скачать изображение -->
+				 <a class="propdwnld" id="download" download="image.png"><input class="infodl" type = "button" title="download image" onClick="download()" value="download picture"></a>
+
+				
+
+				<div id = "mainbtn" onclick="return myFnexSwitch()" >GENERATE</div>
+				
+				<script>
+				  addEventListener("keyup", function(event) {
+				    if (event.keyCode == 32)
+				      myFnexSwitch();
+				  });
+				  
+				</script>
+
+				<!-- <button id="playersizebtn" title="Picture settings" style="" >Picture settings</button> -->
+			  	<div id="settingsbtn">
+
+			  		<svg class="svg-icon" viewBox="0 0 20 20">
+							<!-- <path fill="none" d="M10.032,8.367c-1.112,0-2.016,0.905-2.016,2.018c0,1.111,0.904,2.014,2.016,2.014c1.111,0,2.014-0.902,2.014-2.014C12.046,9.271,11.143,8.367,10.032,8.367z M10.032,11.336c-0.525,0-0.953-0.427-0.953-0.951c0-0.526,0.427-0.955,0.953-0.955c0.524,0,0.951,0.429,0.951,0.955C10.982,10.909,10.556,11.336,10.032,11.336z"></path> -->
+							<path fill="none" d="M17.279,8.257h-0.785c-0.107-0.322-0.237-0.635-0.391-0.938l0.555-0.556c0.208-0.208,0.208-0.544,0-0.751l-2.254-2.257c-0.199-0.2-0.552-0.2-0.752,0l-0.556,0.557c-0.304-0.153-0.617-0.284-0.939-0.392V3.135c0-0.294-0.236-0.532-0.531-0.532H8.435c-0.293,0-0.531,0.237-0.531,0.532v0.784C7.582,4.027,7.269,4.158,6.966,4.311L6.409,3.754c-0.1-0.1-0.234-0.155-0.376-0.155c-0.141,0-0.275,0.055-0.375,0.155L3.403,6.011c-0.208,0.207-0.208,0.543,0,0.751l0.556,0.556C3.804,7.622,3.673,7.935,3.567,8.257H2.782c-0.294,0-0.531,0.238-0.531,0.531v3.19c0,0.295,0.237,0.531,0.531,0.531h0.787c0.105,0.318,0.236,0.631,0.391,0.938l-0.556,0.559c-0.208,0.207-0.208,0.545,0,0.752l2.254,2.254c0.208,0.207,0.544,0.207,0.751,0l0.558-0.559c0.303,0.154,0.616,0.285,0.938,0.391v0.787c0,0.293,0.238,0.531,0.531,0.531h3.191c0.295,0,0.531-0.238,0.531-0.531v-0.787c0.322-0.105,0.636-0.236,0.938-0.391l0.56,0.559c0.208,0.205,0.546,0.207,0.752,0l2.252-2.254c0.208-0.207,0.208-0.545,0.002-0.752l-0.559-0.559c0.153-0.303,0.285-0.615,0.389-0.938h0.789c0.295,0,0.532-0.236,0.532-0.531v-3.19C17.812,8.495,17.574,8.257,17.279,8.257z M16.747,11.447h-0.653c-0.241,0-0.453,0.164-0.514,0.398c-0.129,0.496-0.329,0.977-0.594,1.426c-0.121,0.209-0.089,0.473,0.083,0.645l0.463,0.465l-1.502,1.504l-0.465-0.463c-0.174-0.174-0.438-0.207-0.646-0.082c-0.447,0.262-0.927,0.463-1.427,0.594c-0.234,0.061-0.397,0.271-0.397,0.514V17.1H8.967v-0.652c0-0.242-0.164-0.453-0.397-0.514c-0.5-0.131-0.98-0.332-1.428-0.594c-0.207-0.123-0.472-0.09-0.646,0.082l-0.463,0.463L4.53,14.381l0.461-0.463c0.169-0.172,0.204-0.434,0.083-0.643c-0.266-0.461-0.467-0.939-0.596-1.43c-0.06-0.234-0.272-0.398-0.514-0.398H3.313V9.319h0.652c0.241,0,0.454-0.162,0.514-0.397c0.131-0.498,0.33-0.979,0.595-1.43c0.122-0.208,0.088-0.473-0.083-0.645L4.53,6.386l1.503-1.504l0.46,0.462c0.173,0.172,0.437,0.204,0.646,0.083c0.45-0.265,0.931-0.464,1.433-0.597c0.233-0.062,0.396-0.274,0.396-0.514V3.667h2.128v0.649c0,0.24,0.161,0.452,0.396,0.514c0.502,0.133,0.982,0.333,1.433,0.597c0.211,0.12,0.475,0.089,0.646-0.083l0.459-0.462l1.504,1.504l-0.463,0.463c-0.17,0.171-0.202,0.438-0.081,0.646c0.263,0.448,0.463,0.928,0.594,1.427c0.061,0.235,0.272,0.397,0.514,0.397h0.651V11.447z"></path>
+						</svg>
+			  	<div>
+
+			  	<script>
+				//Сворачивает и разворачивает див для плеера.
+				//https://javascript.ru/forum/dom-window/58389-izmenenie-razmera-bloka-po-nazhatiyu-knopki.html
+
+				    var div = $('#dinamicblok'), baseWidth = div.width();
+
+				 
+
+				    $('#settingsbtn').click(function() {
+
+				      div.animate({
+
+				        width: (div.width() == baseWidth ? '550px' : baseWidth)
+				       
+
+				      });
+
+				    });
+				</script>
+
+
+		  	<!-- </div> -->
+
+		  	<!-- <div class="topblok"> -->
+		  	
+		  	<!-- </div> -->
+
+			
+
+  			<!-- <a class="prop" id="download" download="image.png"><button type="button" onClick="download()">Download</button></a> -->
+  			
+			
+  			
+  			
+  			
+
+  			
+</div>
+
+
+<!-- <div class="view-source"><a href="#">| advanced |</a> разкоментить когда понадобится
+<div id="advanced" class="hide">
+	<input id = "btn" type = "button" onclick="return myFunction(011)" value="Custom">
+  	Element number:
+  	<input class="frm" type="text" id="elnm" size="7" value="">
+  	Value:
+  	<input class="frm" type="text" id="vl" size="7" value="">
+  	<input id = "btn" type = "button" onclick="return manfill()" value="add">
+ 	<p id = "fnumt"></p><br>
+  	<p id = "info"></p>
+</div>
+</div> -->
+
+
+<!-- <div id="mainfield"> -->
+
+	
+	
+	
+	
+
+
+
+
+	
+<!-- </div> -->
+
+
+<!-- Massive state:<p id = "infolog"></p><br> -->
+
+
+</body> 
+</html>
